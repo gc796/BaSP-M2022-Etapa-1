@@ -1,0 +1,97 @@
+/* 
+-Primero las propiedades position y display. En caso que el display sea flex van las reglas de flexbox (flex-direction, align-self, etc). 
+-Después van las reglas de "box-model": width,height,margin,padding,top,left,etc. 
+-Luego las reglas de background y border.
+-A continuación las reglas de texto (font-size, text-shadow, etc). 
+-Por último las demás reglas. 
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+
+/* Element selectors */
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 122px;
+    background-color: #AACE9B;
+    z-index: 99;
+}
+
+h1 {
+    position: absolute;
+    right: 10px;
+    font-size: 83px;
+    color: #373867;
+    font-weight: bold;
+}
+
+header h2 {
+    position: absolute;
+    right: 20px;
+    top: 90px;
+    font-size: 28px;
+    color: #69A362;
+    font-weight: bold;
+}
+
+aside {
+    position: fixed;
+    display: block;
+    top: 122px;
+    width: 253px;
+    height: 6000px;
+    background-color: #373867;
+    border-left: 49px solid #AACE9B;
+}
+
+nav ul li a {
+    position: relative;
+    display: block;
+    top: 120px;
+    width: 162px;
+    margin: 35px auto;
+    padding: 12px 20px;
+    background-color: #AACE9B;
+    border-radius: 10px;
+    font-size: 22px;
+    color:#373867;
+    text-align: center;
+    text-decoration: none;
+}
+
+main {
+    position: absolute;
+    top: 130px;
+    left: 310px;
+}
+
+/* Class - Id */
+
+.nav-line1{
+    position: relative;
+    top: 60px;
+    width: 90%;
+    border-bottom: 2px solid #69A362;
+}
+
+.nav-line2 {
+    position: relative;
+    top: 180px;
+    width: 90%;
+    border-bottom: 2px solid #69A362;
+}
+
+.contact-section {
+    position: relative;
+    top: 501px;
+    color: #fff;
+}
+

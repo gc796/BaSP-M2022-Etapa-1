@@ -60,6 +60,10 @@ nav ul li a {
     text-decoration: none;
 }
 
+nav ul li a:hover {
+    background-color: #fff;
+}
+
 main {
     position: relative;
     top: 130px;
@@ -128,14 +132,9 @@ footer p {
     margin-bottom: 10px;
 }
 
-.links {
+.contact-info, .contact-info p {
+    margin-top: 15px;
     text-align: center;
-}
-
-.contact-section a {
-    margin: 20px 0;
-    text-decoration: none;
-    color: #fff;
 }
 
 /* ##Welcome section */
@@ -183,7 +182,7 @@ footer p {
 }
 
 .features-section h2 {
-    margin-bottom: 80px;
+    margin: 0 0 80px 110px;
     font-weight: bold;
     font-size: 45px;
 }
@@ -262,6 +261,7 @@ footer p {
 
 .form {
     text-align: start;
+    margin-left: 110px;
 }
 
 .form label {
@@ -290,6 +290,11 @@ footer p {
     resize: none;
 }
 
+.form input:focus, textarea:focus {
+    outline: none;
+    border: solid 3px #AACE9B;
+}
+
 .btn-submit {
     display: block;
     position: absolute;
@@ -302,6 +307,11 @@ footer p {
     font-family: 'Roboto', 'sans-serif';
     font-size: 18px;
     color: #373867;
+    cursor: pointer;
+}
+
+.btn-submit:hover {
+    background-color: #fff;
 }
 
 /* ##Our history section */

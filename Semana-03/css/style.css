@@ -67,7 +67,7 @@ nav ul li a:hover {
 main {
     position: relative;
     top: 130px;
-    left: 350px;
+    left:25%;
     width: 75%;
 }
 
@@ -95,13 +95,14 @@ footer p {
     font-size: 18px;
 }
 
-/* #Class - Id */
+/* #Class */
 
 /* ##Sidebar */
 
 .nav-line1{
     position: relative;
     top: 60px;
+    left: 10%;
     width: 90%;
     border-bottom: 2px solid #69A362;
 }
@@ -109,6 +110,7 @@ footer p {
 .nav-line2 {
     position: relative;
     top: 100px;
+    left: 10%;
     width: 90%;
     border-bottom: 2px solid #69A362;
 }
@@ -129,7 +131,7 @@ footer p {
 .contact-section p {
     font-size: 14px;
     text-align: start;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .contact-info, .contact-info p {
@@ -156,7 +158,6 @@ footer p {
     font-weight: bold;
 }
 
-
 .welcome-section div p{
     position: absolute;
     top: 300px;
@@ -168,7 +169,7 @@ footer p {
 .welcome-section div img {
     position: absolute;
     top: 180px;
-    right: 100px;
+    left: 40%;
     width: 680px;
     height: auto;
 }
@@ -327,12 +328,12 @@ footer p {
     font-size: 45px;
     font-weight: bold;
     text-transform: uppercase;
-    text-align: center;
+    margin-left: 33%;;
 }
 
 .p-semibold {
     margin-bottom: 60px;
-    margin-left: 5%;
+    /* margin-left: 5%; */
     width: 90%;
     font-size: 24px;
     font-weight: 500;
@@ -340,7 +341,7 @@ footer p {
 
 .p-regular{
     width: 60%;
-    margin: 0 0 50px 20%;
+    margin: 0 0 50px 15%;
     font-size: 18px;
 }
 
@@ -349,7 +350,6 @@ footer p {
 .items-section {
     position: relative;
     top: 1200px;
-    padding-left: 5%;
     text-align: center;
 }
 
@@ -377,6 +377,5 @@ footer p {
     text-decoration: none;
     font-weight: bold;
     color: #373867;
-    list-style: circle left;
+    list-style: circle;
 }
-

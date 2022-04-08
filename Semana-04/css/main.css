@@ -1,0 +1,54 @@
+.welcome-h2 {
+    padding-top: 1rem;
+    font-size: 2.5rem;
+}
+
+.welcome-h3 {
+    padding: 0.5rem 0;
+    font-size: 1.3rem;
+}
+
+.welcome-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.welcome-div img {
+    order: 1;
+    width: 350px;
+    padding: 1rem 0;
+}
+
+.welcome-div p {
+    order: 2;
+}
+
+/* Features */
+
+.features {
+    text-align: center;
+}
+
+.features-h2 {
+    padding-top: 4rem;
+    font-size: 2rem;
+}
+
+.features div {
+    margin: 2rem 0;
+}
+
+.features div p {
+    margin: 0 auto;
+    padding: 0.5rem 0;
+    width: 80%;
+}
+
+.features img {
+    padding-bottom: 0.5rem;
+    width: 75px;
+    height: auto;
+    opacity: 50%;
+}
+

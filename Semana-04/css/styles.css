@@ -3,8 +3,7 @@
 
 body {
     padding-top: 3.5rem;
-    max-width: 1920px;
-    width: 480px;
+    width: 100%;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
     color: #373867;
@@ -13,4 +12,11 @@ body {
 h2, h3, h4 {
     font-weight: bold;
     text-align: center;
+}
+
+@media screen and (min-width: 480px) {
+
+    .sidebar {
+        display: none;
+    }
 }

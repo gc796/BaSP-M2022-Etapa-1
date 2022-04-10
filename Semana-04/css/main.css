@@ -1,3 +1,33 @@
+form {
+    margin: 0 auto;
+    width: 90%;
+}
+
+legend {
+    margin: 0 auto;
+    padding: 4rem 0 3rem 0;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+label {
+    display: block;
+    padding-bottom: 0.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+input {
+    width: 97%;
+    padding: 0.25rem;
+    margin-bottom: 2rem;
+}
+
+textarea {
+    width: 98%;
+    resize: none;
+}
+
 #welcome-section h2 {
     padding-top: 1rem;
     font-size: 2.5rem;
@@ -113,32 +143,61 @@
     cursor: pointer;
 }
 
-form {
-    margin: 0 auto;
-    width: 90%;
+/* Our history */
+
+#our-history-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
-legend {
-    margin: 0 auto;
-    padding: 4rem 0 3rem 0;
+#our-history-section h2 {
+    padding-top: 4rem;
     font-size: 2rem;
-    font-weight: bold;
-}
-
-label {
-    display: block;
-    padding-bottom: 0.5rem;
-    font-weight: bold;
     text-transform: uppercase;
 }
 
-input {
-    width: 97%;
-    padding: 0.25rem;
-    margin-bottom: 2rem;
+.p-semibold {
+    padding: 2rem 0;
+    width: 90%;
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: center;
 }
 
-textarea {
-    width: 98%;
-    resize: none;
+.p-regular {
+    width: 85%;
+    padding-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+#items-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#items-section div {
+    width: 30%;
+}
+
+#items-section h3 {
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: #AACE9B;
+    text-transform: uppercase;
+}
+
+#items-section li {
+    margin-left: 20px;
+    line-height: 20px;
+    list-style-type: disc;
+}
+
+#items-section a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #373867;
 }

@@ -1,0 +1,54 @@
+aside {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #373867;
+    z-index: 80;
+}
+
+nav ul li a {
+    display: block;
+    width: 30%;
+    margin: 3rem auto;
+    padding: 1rem 2rem;
+    background-color: #AACE9B;
+    border-radius: 10px;
+    font-size: 2rem;
+    color: #373867;
+    text-align: center;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    background-color: #fff;
+}
+
+#nav-line-sidebar {
+    width: 80%;
+    margin: 0 auto;
+    border-bottom: 2px solid #69A362;
+}
+
+#contact-section {
+    margin-top: 4rem;
+    padding: 0 20px;
+    text-align: center;
+    color: #fff;
+}
+
+#contact-section h4 {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+#contact-info {
+    margin-top: 4rem;
+}
+
+#contact-section p,
+#contact-info p {
+    margin: 1rem 0;
+}
+
+

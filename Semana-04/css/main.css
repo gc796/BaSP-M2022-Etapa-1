@@ -25,8 +25,20 @@ input {
 
 textarea {
     width: 98%;
+    padding: 0.25rem;
     resize: none;
 }
+
+input:hover, textarea:hover {
+    outline: none;
+    border: solid 3px #AACE9B;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border: solid 3px #69A362;
+}
+
 
 #welcome-section h2 {
     padding-top: 1rem;
@@ -51,6 +63,8 @@ textarea {
 }
 
 #welcome-section p {
+    width: 80%;
+    margin: 0 auto;
     order: 2;
     text-align: center;
 }
@@ -143,6 +157,10 @@ textarea {
     cursor: pointer;
 }
 
+#btn-submit:hover {
+    background-color: #fff;
+}
+
 /* Our history */
 
 #our-history-section {
@@ -191,7 +209,7 @@ textarea {
 }
 
 #items-section li {
-    margin-left: 20px;
+    margin-left: 22%;
     line-height: 20px;
     list-style-type: disc;
 }

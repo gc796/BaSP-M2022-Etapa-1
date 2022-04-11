@@ -16,7 +16,72 @@ h2, h3, h4 {
 
 @media screen and (min-width: 480px) {
 
-    .sidebar {
+    #sidebar {
         display: none;
     }
+}
+
+@media screen and (min-width: 768px) {
+
+    #sidebar {
+        display: block;
+        width: 25%;
+        background-color: #373867;
+        z-index: 80;
+    }
+
+    #contact-section p {
+        font-size: 0.7rem;
+    }
+
+    main, footer {
+        margin-left: 25%;
+        width: 75%;
+    }
+
+
+    nav ul li a {
+        margin: 2rem auto;
+        padding: 0.8rem 2rem;
+        font-size: 0.8rem;
+    }
+
+    header {
+        display: flex;
+        justify-content: flex-end;
+    }
+    
+    header .fa-bars {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+
+    .container, header, footer {
+        width: 100%;
+        max-width: 1920px;
+        margin: 0 auto;
+    }
+
+    #sidebar {
+        width: 25%;
+        max-width: 330px;
+    }
+
+    #contact-section p {
+        font-size: 0.9rem;
+    }
+    
+    #welcome-section {
+        
+    }
+
+
+    nav ul li a {
+        margin: 2rem auto;
+        padding: 0.8rem 2rem;
+        font-size: 1rem;
+    }
+    
 }

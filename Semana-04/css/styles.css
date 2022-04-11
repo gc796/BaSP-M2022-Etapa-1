@@ -39,13 +39,6 @@ h2, h3, h4 {
         width: 75%;
     }
 
-
-    nav ul li a {
-        margin: 2rem auto;
-        padding: 0.8rem 2rem;
-        font-size: 0.8rem;
-    }
-
     header {
         display: flex;
         justify-content: flex-end;
@@ -54,34 +47,61 @@ h2, h3, h4 {
     header .fa-bars {
         display: none;
     }
+
+    nav ul li a {
+        margin: 2rem auto;
+        padding: 0.8rem 2rem;
+        font-size: 0.8rem;
+    }
 }
 
 @media screen and (min-width: 1024px) {
 
-    .container, header, footer {
-        width: 100%;
-        max-width: 1920px;
-        margin: 0 auto;
-    }
-
     #sidebar {
-        width: 25%;
-        max-width: 330px;
+        width: 15%;
     }
 
     #contact-section p {
         font-size: 0.9rem;
     }
     
-    #welcome-section {
-        
+    #welcome-section div {
+        flex-direction: row;
+        justify-content: center;
     }
 
+    #welcome-section p {
+        width: 50%;
+    }
+
+    #features-container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .feature-div {
+        display: flex;
+        justify-content: space-around;
+        width: 50%;
+    }
+
+    .feature-text {
+        width: 60%;
+    }
+
+    #attributes-section, fieldset, #items-section {
+        max-width: 950px;
+        margin: 0 auto;
+    }
+
+    main, footer {
+        margin-left: 15%;
+        width: 85%;
+    }
 
     nav ul li a {
         margin: 2rem auto;
         padding: 0.8rem 2rem;
         font-size: 1rem;
     }
-    
 }

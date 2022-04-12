@@ -28,3 +28,20 @@ This file is used to format the default styles:
 ```
 reset.css
 ```
+### 4th week
+
+On this week, we added css styles once again to the landing page but this time we had permission to use flexbox and the design had to be responsive.
+
+We have ordered the styles in different files to be able to reuse them:
+
+- header.css
+- sidebar.css
+- main.css
+- footer.css
+- styles.css
+
+In the **styles.css** you will find the media-queries and the styles that apply in general.
+
+To format the styles we use **reset.css.**
+
+**All the files are inside of "Semana-04" folder.**

@@ -34,6 +34,10 @@ h2, h3, h4 {
         font-size: 0.7rem;
     }
 
+    body {
+        padding-top: 4.5rem;
+    }
+
     main, footer {
         margin-left: 20%;
         width: 80%;
@@ -42,10 +46,15 @@ h2, h3, h4 {
     header {
         display: flex;
         justify-content: flex-end;
+        height: 4.5rem;
     }
     
     header .fa-bars {
         display: none;
+    }
+
+    h1 {
+        font-size: 3rem;
     }
 
     nav ul li a {

@@ -82,6 +82,10 @@
     font-size: 0.8rem;
 }
 
+/* .input-form {
+    height: 47px;
+} */
+
 #contact-opt {
     display: flex;
     align-items: flex-start;

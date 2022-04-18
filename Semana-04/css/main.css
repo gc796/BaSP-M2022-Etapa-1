@@ -1,11 +1,17 @@
+#welcome-section {
+    padding-bottom: 2rem;
+}
+
 #welcome-section h2 {
     padding-top: 1rem;
     font-size: 2.5rem;
+    text-align: center;
 }
 
 #welcome-section h3 {
     padding: 0.5rem 0;
     font-size: 1.3rem;
+    text-align: center;
 }
 
 #welcome-section div {
@@ -31,7 +37,7 @@
 }
 
 #features h2 {
-    padding-top: 4rem;
+    padding-top: 2rem;
     font-size: 2rem;
 }
 
@@ -82,9 +88,9 @@
     font-size: 0.8rem;
 }
 
-/* .input-form {
-    height: 47px;
-} */
+.input-form {
+    height: 3rem;
+}
 
 #contact-opt {
     display: flex;
@@ -149,7 +155,6 @@
 #items-section {
     display: flex;
     justify-content: flex-end;
-    
 }
 
 #items-section div {
@@ -203,6 +208,7 @@ input {
 }
 
 textarea {
+    height: 12rem;
     resize: none;
 }
 
@@ -213,6 +219,7 @@ textarea {
     border-style: none;
     border-radius: 15px;
     background-color: rgba(55, 56, 103, 0.4);
+    box-sizing: border-box;
 }
 
 input:hover,

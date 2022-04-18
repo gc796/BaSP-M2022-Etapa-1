@@ -6,12 +6,6 @@ funcional */
     display: none;
 }
 
-#nav-line-sidebar {
-    width: 80%;
-    margin: 0 auto;
-    border-bottom: 2px solid #69A362;
-}
-
 #contact-section {
     margin-top: 4rem;
     padding: 0 20px;

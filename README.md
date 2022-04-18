@@ -44,4 +44,19 @@ In the **styles.css** you will find the media-queries and the styles that apply 
 
 To format the styles we use **reset.css.**
 
+**Link github pages:** https://gc796.github.io/BaSP-M2022-Etapa-1/Semana-04/index.html
+
 **All the files are inside of "Semana-04" folder.**
+
+### 5th week
+
+This week, we started with JavaScript basics:
+
+- Variables and operators
+- Strings
+- Arrays
+- If else
+- For
+- Functions
+
+The excercises are in the folder named "exercises", inside of "Semana-05".

@@ -15,12 +15,8 @@ header .fa-bars {
     justify-content: center;
     align-items: center;
     margin: auto;
-    margin-left: 0.5rem;
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 50%;
-    background-color: #373867;
-    color: #AACE9B;
+    margin-left: 1rem;
+    color: #373867;
     cursor: pointer;
 }
 

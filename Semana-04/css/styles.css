@@ -28,51 +28,34 @@ h2, h3, h4 {
 
 @media screen and (min-width: 768px) {
 
-    #sidebar {
-        display: block;
-        width: 20%;
-        background-color: #373867;
-        z-index: 80;
-    }
-
-    #contact-section p {
-        font-size: 0.7rem;
-    }
-
-    #welcome-section h2, #welcome-section h3, #features h2 {
-        padding-left: 4rem;
-        text-align: start;
+    #attributes-section,
+    fieldset,
+    #items-section {
+        max-width: 950px;
+        margin: 0 auto;
     }
 
     body {
         padding-top: 4.5rem;
     }
 
-    main, footer {
-        margin-left: 20%;
-        width: 80%;
-    }
-
     header {
         height: 4.5rem;
-    }
-    
-    header .fa-bars {
-        display: none;
     }
 
     h1 {
         font-size: 3rem;
     }
-
-    nav ul li a {
-        margin: 2rem auto;
-        padding: 0.8rem 2rem;
-        font-size: 0.8rem;
-    }
 }
 
 @media screen and (min-width: 1024px) {
+
+    #sidebar {
+        display: block;
+        width: 15%;
+        background-color: #373867;
+        z-index: 80;
+    }
 
     #contact-section p {
         font-size: 0.9rem;
@@ -80,6 +63,13 @@ h2, h3, h4 {
     
     #welcome-section div {
         flex-direction: row;
+    }
+
+    #welcome-section h2,
+    #welcome-section h3,
+    #features h2 {
+        padding-left: 4rem;
+        text-align: start;
     }
 
     #welcome-section p {
@@ -101,9 +91,14 @@ h2, h3, h4 {
         width: 60%;
     }
 
-    #attributes-section, fieldset, #items-section {
-        max-width: 950px;
-        margin: 0 auto;
+    main,
+    footer {
+        margin-left: 15%;
+        width: 85%;
+    }
+
+    header .fa-bars {
+        display: none;
     }
 
 }

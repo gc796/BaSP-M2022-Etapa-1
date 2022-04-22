@@ -1,12 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
+* {
+    
+}
 
 body {
     padding-top: 3.5rem;
     width: 100%;
     font-family: 'Roboto', sans-serif;
     color: #373867;
-    box-sizing: border-box;
 }
 
 h2, h3, h4 {
@@ -53,12 +55,13 @@ h2, h3, h4 {
     #sidebar {
         display: block;
         width: 15%;
+        min-width: 183px;
         background-color: #373867;
         z-index: 80;
     }
 
     #contact-section p {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
     }
     
     #welcome-section div {

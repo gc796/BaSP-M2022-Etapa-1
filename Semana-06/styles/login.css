@@ -1,0 +1,88 @@
+.container {
+    width: 40%;
+    min-width: 440px;
+    margin: 6% auto;
+    padding: 2% 0 8% 0;
+    box-shadow: 0 5px 10px 1px rgba(0, 0, 0, 0.30);
+    text-align: center;
+}
+
+#login-title {
+    margin-bottom: 4rem;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+#validate {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 45%;
+    margin: 0 auto;
+    padding: 0.5rem;
+    border-radius: 5px;
+    background-color: red;
+    font-size: 14px;
+    color: #fff;
+    display: none;
+}
+
+.label {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 50%;
+    margin: 1rem auto;
+    border-bottom: solid 3px #AACE9B;
+}
+
+fieldset {
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="text"],input[type="password"] {
+    width: 80%;
+    padding: 0.5rem;
+    border-style: none;
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+
+label {
+    padding-left: 25%;
+    text-align: start;
+}
+
+input:focus {
+    outline-style: none;
+}
+
+fieldset a {
+    padding: 10% 25% 10% 0;
+    text-decoration: none;
+    text-align: end;
+    color: #373867;
+}
+
+button {
+    display: block;
+    width: 35%;
+    margin: 1rem auto;
+    padding: 8px 15px;
+    border-style: none;
+    border: 1px solid #373867;
+    background-color: #AACE9B;
+    font-size: 1rem;
+    color: #373867;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #fff;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+}

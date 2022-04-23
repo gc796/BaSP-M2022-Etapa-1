@@ -4,11 +4,11 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Trackgenix - Login</title>
+        <title>Trackgenix - Sing Up</title>
         <link rel="stylesheet" href="../styles/reset.css">
         <link rel="stylesheet" href="../styles/header.css">
         <link rel="stylesheet" href="../styles/sldebar.css">
-        <link rel="stylesheet" href="../styles/login.css">
+        <link rel="stylesheet" href="../styles/sign-up.css">
         <link rel="stylesheet" href="../styles/footer.css">
         <link rel="stylesheet" href="../styles/styles.css">
         <script src="https://kit.fontawesome.com/97eec942a3.js" crossorigin="anonymous"></script>
@@ -53,22 +53,26 @@
             <div class="container">
                 <form>
                     <fieldset>
-                        <legend id="login-title">Log In</legend>
-                        <!-- <div id="validate">
-                            <i class="fa-solid fa-square-xmark"></i>
-                            <p>Email or password incorrect</p>
-                        </div> -->
-                        <div class="label error">
-                            <i class="fa-solid fa-envelope icon"></i>
-                            <input type="text">
+                        <legend id="signup-title">Sign Up</legend>
+                        <div id="inputs">
+                            <div>
+                                <input type="text" placeholder="Name">
+                                <input type="text" placeholder="Last Name">
+                                <input type="number" placeholder="DNI">
+                                <input type="date">
+                                <input type="number" placeholder="Phone Number">
+                                <input type="text" placeholder="Home Address">
+                            </div>
+                            <div>
+                                <input type="text" placeholder="Location">
+                                <input type="number" placeholder="Postal Code">
+                                <input type="email" placeholder="Email">
+                                <input type="password" placeholder="Password">
+                                <input type="password" placeholder="Repeat Password">
+                            </div>
                         </div>
-                        <div class="label error">
-                            <i class="fa-solid fa-lock icon"></i>
-                            <input type="password">
-                        </div>
-                        <label for=""><input type="checkbox" name="" id="">Remember me</label>
-                        <a href="#">Forgot password?</a>
-                        <button type="submit">Continue</button>
+                        <p>All fields are required</p>
+                        <button type="submit" id="btn-create">Create</button>
                     </fieldset>
                 </form>
             </div>
@@ -77,6 +81,5 @@
             <p>Rosario, Santa Fe - Argentina</p>
             <p>Copyright &copy; Trackgenix SA. All rights reserved.</p>
         </footer>
-        </body>
     </body>
 </html>

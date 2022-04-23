@@ -1,53 +1,40 @@
 .container {
-    width: 40%;
-    min-width: 420px;
-    margin: 6% auto;
-    padding: 2% 0 6% 0;
+    width: 50%;
+    min-width: 400px;
+    margin: 2rem auto;
+    padding: 2% 0 4% 0;
     box-shadow: 0 5px 10px 1px rgba(0, 0, 0, 0.30);
     text-align: center;
 }
 
-#login-title {
+#signup-title {
     margin-bottom: 4rem;
     font-size: 2rem;
     font-weight: bold;
 }
 
-/* #validate {
+#inputs {
     display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 45%;
-    margin: 0 auto;
-    padding: 0.5rem;
-    border-radius: 5px;
-    background-color: red;
-    font-size: 14px;
-    color: #fff;
-} */
-
-.label {
-    display: flex;
-    align-items: center;
-    width: 50%;
-    margin: 1rem auto;
+    flex-wrap: wrap;
+    justify-content: center;
 }
-
-.label input {
+#inputs input {
+    display: block;
     width: 80%;
-    padding-left: 1.5rem;
+    margin: 0.8rem auto;
+    padding: 0.5rem;
     border-style: none;
+    border-bottom: solid 2px #373867;
     font-size: 1rem;
-    line-height: 2rem;
-    border-bottom: 2px solid #373867;
+    line-height: 1.5rem;
 }
 
-.label input:hover, .label input:focus{
-    border-bottom: 2px solid #AACE9B;
+#inputs input:hover, #inputs input:focus {
+    border-bottom: solid 2px #AACE9B;
 }
 
-.label .icon {
-    position: absolute;
+#btn-create {
+    margin: 3rem auto;
 }
 
 fieldset {
@@ -55,9 +42,10 @@ fieldset {
     flex-direction: column;
 }
 
-label {
-    padding-left: 25%;
-    text-align: start;
+fieldset p {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: rgba(60, 60, 60, 0.8);
 }
 
 input:focus {
@@ -89,6 +77,6 @@ button:hover {
 }
 
 footer {
-    position: fixed;
+    position: sticky;
     bottom: 0;
 }

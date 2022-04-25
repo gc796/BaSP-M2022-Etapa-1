@@ -12,6 +12,7 @@
         <link rel="stylesheet" href="../styles/footer.css">
         <link rel="stylesheet" href="../styles/styles.css">
         <script src="https://kit.fontawesome.com/97eec942a3.js" crossorigin="anonymous"></script>
+        <script src="../javascript/login.js"></script>
     </head>
     <body>
         <header>
@@ -54,21 +55,27 @@
                 <form>
                     <fieldset>
                         <legend id="login-title">Log In</legend>
-                        <!-- <div id="validate">
-                            <i class="fa-solid fa-square-xmark"></i>
-                            <p>Email or password incorrect</p>
-                        </div> -->
-                        <div class="label error">
+                        <div class="label">
                             <i class="fa-solid fa-envelope icon"></i>
-                            <input type="text">
+                            <input type="text" id="email">
                         </div>
-                        <div class="label error">
+
+                        <div class="invalid-field invalid-email hidden">
+                            <p>*Invalid email</p>
+                        </div>
+
+                        <div class="label">
                             <i class="fa-solid fa-lock icon"></i>
-                            <input type="password">
+                            <input type="password" id="password">
                         </div>
+
+                        <div class="invalid-field invalid-pw hidden">
+                            <p>*Invalid password</p>
+                        </div>
+
                         <label for=""><input type="checkbox" name="" id="">Remember me</label>
                         <a href="#">Forgot password?</a>
-                        <button type="submit">Continue</button>
+                        <button type="submit" id="btn-submit">Login</button>
                     </fieldset>
                 </form>
             </div>
@@ -77,6 +84,5 @@
             <p>Rosario, Santa Fe - Argentina</p>
             <p>Copyright &copy; Trackgenix SA. All rights reserved.</p>
         </footer>
-        </body>
     </body>
 </html>

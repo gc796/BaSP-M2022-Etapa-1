@@ -13,12 +13,12 @@
     font-weight: bold;
 }
 
-#inputs {
+.inputs {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
-#inputs input {
+.inputs input {
     display: block;
     width: 80%;
     margin: 0.8rem auto;
@@ -29,12 +29,34 @@
     line-height: 1.5rem;
 }
 
-#inputs input:hover, #inputs input:focus {
+.inputs input:hover, .inputs input:focus {
     border-bottom: solid 2px #AACE9B;
 }
 
 #btn-create {
     margin: 3rem auto;
+}
+
+.invalid-field {
+    justify-content: center;
+    width: 35%;
+    margin: 0 auto;
+    padding: 0.2rem 0 1rem 0;
+    font-size: 14px;
+    color: red;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.valid {
+    background-color: #69A362;
+    border-bottom: solid 2px #69A362;
+}
+
+.error {
+    border-bottom: 2px solid red;
 }
 
 fieldset {

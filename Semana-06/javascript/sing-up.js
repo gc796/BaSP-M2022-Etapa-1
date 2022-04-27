@@ -3,6 +3,7 @@ window.onload = function () {
     var inputName = document.getElementById('name');
     var inputLastName = document.getElementById('lastname');
     var inputDNI = document.getElementById('dni');
+    var inputDate = document.getElementById('date');
     var inputPhone = document.getElementById('phone-number');
     var inputAddress = document.getElementById('home-address');
     var inputLocation = document.getElementById('location');
@@ -11,8 +12,18 @@ window.onload = function () {
     var inputPw = document.getElementById('password');
     var inputPw2 = document.getElementById('password2');
     var btnCreate = document.getElementById('btn-create');
+    var invalidName = document.querySelector('.invalid-name');
+    var invalidLastName = document.querySelector('.invalid-lastname');
+    var invalidDNI = document.querySelector('.invalid-dni');
+    var invalidPhone = document.querySelector('.invalid-phone');
+    var invalidAddress = document.querySelector('.invalid-address');
+    var invalidLocation = document.querySelector('.invalid-location');
+    var invalidPostaCode = document.querySelector('.invalid-postalcode');
+    var invalidEmail = document.querySelector('.invalid-email');
+    var invalidPw = document.querySelector('.invalid-pw');
+    var invalidPw2 = document.querySelector('.invalid-pw2');
 
-    function validateFullName(name) {
+    function validateFullName(name, invalidField) {
         var cont=0;
         
         for (let index = 0; index < name.value.length; index++) {
@@ -24,6 +35,7 @@ window.onload = function () {
             name.classList.add('valid');
             return true;
         } else {
+            invalidField.classList.remove('hidden');
             name.classList.add('invalid');
             return false;
         }
@@ -34,6 +46,7 @@ window.onload = function () {
             inputDNI.classList.add('valid');
             return true;
         } else {
+            invalidDNI.classList.remove('hidden');
             inputDNI.classList.add('invalid');
             return false;
         }
@@ -44,6 +57,7 @@ window.onload = function () {
             inputPhone.classList.add('valid');
             return true;
         } else {
+            invalidPhone.classList.remove('hidden');
             inputPhone.classList.add('invalid');
             return false;
         }
@@ -76,6 +90,7 @@ window.onload = function () {
             inputAddress.classList.add('valid');
             return true;
         } else {
+            invalidAddress.classList.remove('hidden');
             inputAddress.classList.add('invalid');
             return false;
         }
@@ -87,6 +102,7 @@ window.onload = function () {
             inputLocation.classList.add('valid');
             return true;
         } else {
+            invalidLocation.classList.remove('hidden');
             inputLocation.classList.add('invalid');
             return false;
         }
@@ -97,6 +113,7 @@ window.onload = function () {
             inputPostalCode.classList.add('valid');
             return true;
         } else {
+            invalidPostaCode.classList.remove('hidden');
             inputPostalCode.classList.add('invalid');
             return false;
         }
@@ -107,6 +124,7 @@ window.onload = function () {
             inputEmail.classList.add('valid');
             return true;
         } else {
+            invalidEmail.classList.remove('hidden');
             inputEmail.classList.add('invalid');
             return false;
         }
@@ -147,10 +165,12 @@ window.onload = function () {
             inputPw.classList.add('valid');
             return true;
         } else {
+            invalidPw.classList.remove('hidden');
             inputPw.classList.add('invalid');
             return false;
         }
     } else {
+        invalidPw.classList.remove('hidden');
         inputPw.classList.add('invalid');
         return false;
     }
@@ -161,6 +181,7 @@ window.onload = function () {
             inputPw2.classList.add('valid');
             return true;
         } else {
+            invalidPw2.classList.remove('hidden');
             inputPw2.classList.add('invalid');
             return false;
         }
@@ -168,8 +189,8 @@ window.onload = function () {
 
     btnCreate.addEventListener('click', e => {
         e.preventDefault();
-        validateFullName(inputName);
-        validateFullName(inputLastName);
+        validateFullName(inputName, invalidName);
+        validateFullName(inputLastName, invalidLastName);
         validateDNI();
         validatePhone();
         validateAddress();
@@ -180,7 +201,7 @@ window.onload = function () {
         validatePw2(inputPw, inputPw2);
 
         inputName.addEventListener('blur', () => {
-            if (validateFullName(inputName)) {
+            if (validateFullName(inputName, invalidName)) {
                 inputName.classList.add('valid');
                 inputName.classList.remove('invalid');
             } else {
@@ -189,13 +210,14 @@ window.onload = function () {
             }
         });
         inputName.addEventListener('focus', () => {
-            if (!validateFullName(inputName)) {
+            if (!validateFullName(inputName, invalidName)) {
+                invalidName.classList.toggle('hidden');
                 inputName.classList.remove('invalid');
             }
         } );
 
         inputLastName.addEventListener('blur', () => {
-            if (validateFullName(inputLastName)) {
+            if (validateFullName(inputLastName, invalidLastName)) {
                 inputLastName.classList.add('valid');
                 inputLastName.classList.remove('invalid');
             } else {
@@ -204,7 +226,8 @@ window.onload = function () {
             }
         });
         inputLastName.addEventListener('focus', () => {
-            if (!validateFullName(inputLastName)) {
+            if (!validateFullName(inputLastName, invalidLastName)) {
+                invalidLastName.classList.toggle('hidden');
                 inputLastName.classList.remove('invalid');
             }
         } );
@@ -220,6 +243,7 @@ window.onload = function () {
         });
         inputDNI.addEventListener('focus', () => {
             if (!validateDNI()) {
+                invalidDNI.classList.toggle('hidden');
                 inputDNI.classList.remove('invalid');
             }
         });
@@ -236,6 +260,7 @@ window.onload = function () {
 
         inputPhone.addEventListener('focus', () => {
             if (!validatePhone()) {
+                invalidPhone.classList.toggle('hidden');
                 inputPhone.classList.remove('invalid');
             }
         });
@@ -252,6 +277,7 @@ window.onload = function () {
 
         inputAddress.addEventListener('focus', () => {
             if (!validateAddress()) {
+                invalidAddress.classList.toggle('hidden');
                 inputAddress.classList.remove('invalid');
             }
         });
@@ -268,6 +294,7 @@ window.onload = function () {
 
         inputLocation.addEventListener('focus', () => {
             if (!validateLocation()) {
+                invalidLocation.classList.toggle('hidden');
                 inputLocation.classList.remove('invalid');
             }
         });
@@ -284,6 +311,7 @@ window.onload = function () {
 
         inputPostalCode.addEventListener('focus', () => {
             if (!validatePostalCode()) {
+                invalidPostaCode.classList.toggle('hidden');
                 inputPostalCode.classList.remove('invalid');
             }
         });
@@ -300,6 +328,7 @@ window.onload = function () {
 
         inputEmail.addEventListener('focus', () => {
             if (!validateEmail()) {
+                invalidEmail.classList.toggle('hidden');
                 inputEmail.classList.remove('invalid');
             }
         });
@@ -316,6 +345,7 @@ window.onload = function () {
 
         inputPw.addEventListener('focus', () => {
             if (!validatePw(inputPw)) {
+                invalidPw.classList.toggle('hidden');
                 inputPw.classList.remove('invalid');
             }
         });
@@ -332,6 +362,7 @@ window.onload = function () {
 
         inputPw2.addEventListener('focus', () => {
             if (!validatePw2(inputPw, inputPw2)) {
+                invalidPw2.classList.toggle('hidden');
                 inputPw2.classList.remove('invalid');
             }
         });

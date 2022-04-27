@@ -39,10 +39,10 @@
 
 .invalid-field {
     justify-content: center;
-    width: 35%;
+    width: 60%;
     margin: 0 auto;
-    padding: 0.2rem 0 1rem 0;
-    font-size: 14px;
+    padding: 5px 0 1rem 0;
+    font-size: 13px;
     color: red;
 }
 

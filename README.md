@@ -60,3 +60,18 @@ This week, we started with JavaScript basics:
 - Functions
 
 The excercises are in the folder named "exercises", inside of "Semana-05".
+
+### 6th week
+
+This week's goals were:
+
+- Understand what CSS and JavaScript libraries are.
+- Understand what the DOM is and be able to manipulate it.
+- Handle DOM events.
+- Develop functionalities for modern and complex websites
+
+This week we created a login page and a signup page with your validations.
+
+**Link github pages:** https://gc796.github.io/BaSP-M2022-Etapa-1/Semana-06/views/index.html
+
+**All the files are inside of "Semana-06" folder.**

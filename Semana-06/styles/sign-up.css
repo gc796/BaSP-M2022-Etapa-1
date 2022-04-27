@@ -30,7 +30,7 @@
 }
 
 .inputs input:hover, .inputs input:focus {
-    border-bottom: solid 2px #AACE9B;
+    background-color: rgba(55, 56, 103,0.1);
 }
 
 #btn-create {
@@ -50,12 +50,11 @@
     visibility: hidden;
 }
 
-.valid {
-    background-color: #69A362;
+.inputs .valid {
     border-bottom: solid 2px #69A362;
 }
 
-.error {
+.inputs .invalid {
     border-bottom: 2px solid red;
 }
 

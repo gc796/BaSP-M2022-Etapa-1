@@ -35,7 +35,7 @@ window.onload = function () {
                     }
                 };
             };
-            
+
             contTotal = cont1 + cont2 + cont3;
             if (contPw == contTotal) {
                 return true;
@@ -57,7 +57,6 @@ window.onload = function () {
         };
 
         if (testEmail.test(inputEmail.value) == false) {
-            alert('Debe ingresar un email válido');
             inputEmail.classList.add('error');
             invalidEmail.classList.remove('hidden');
 
@@ -82,7 +81,6 @@ window.onload = function () {
         }; 
 
         if (validatePw(inputPw.value) == false) {
-            alert('Debe ingresar un password válido');
             inputPw.classList.add('error');
             invalidPw.classList.remove('hidden');
 

@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+body {
+    padding-top: 3.5rem;
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+    color: #373867;
+}
+
+h2, h3, h4 {
+    font-weight: bold;
+}
+
+.line{
+    width: 80%;
+    margin: 3rem auto;
+    border-bottom: 3px solid #69A362;
+}
+
+@media screen and (min-width: 480px) {
+
+    #sidebar {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 768px) {
+
+    #attributes-section,
+    fieldset,
+    #items-section {
+        max-width: 950px;
+        margin: 0 auto;
+    }
+
+    body {
+        padding-top: 4.5rem;
+    }
+
+    header {
+        height: 4.5rem;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+
+    #sidebar {
+        display: block;
+        width: 15%;
+        min-width: 183px;
+        background-color: #373867;
+        z-index: 80;
+    }
+
+    #contact-section p {
+        font-size: 0.8rem;
+    }
+    
+    #welcome-section div {
+        flex-direction: row;
+    }
+
+    #welcome-section h2,
+    #welcome-section h3,
+    #features h2 {
+        padding-left: 4rem;
+        text-align: start;
+    }
+
+    #welcome-section p {
+        width: 50%;
+    }
+
+    #features-container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .feature-div {
+        display: flex;
+        justify-content: space-around;
+        width: 50%;
+    }
+
+    .feature-text {
+        width: 60%;
+    }
+
+    main,
+    footer {
+        margin-left: 15%;
+        width: 85%;
+    }
+
+    header .fa-bars {
+        display: none;
+    }
+
+}

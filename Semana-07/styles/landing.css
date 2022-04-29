@@ -1,0 +1,235 @@
+#welcome-section {
+    padding-bottom: 2rem;
+}
+
+#welcome-section h2 {
+    padding-top: 1rem;
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+#welcome-section h3 {
+    padding: 0.5rem 0;
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+#welcome-section div {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+
+#welcome-section div img {
+    width: 350px;
+    padding: 1rem 0;
+    margin: 0 auto;
+}
+
+#welcome-section p {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#features {
+    text-align: center;
+}
+
+#features h2 {
+    padding-top: 2rem;
+    font-size: 2rem;
+}
+
+#features-container div {
+    margin: 2rem 0;
+}
+
+#features-container div p {
+    margin: 0 auto;
+    padding: 0.5rem 0;
+    width: 80%;
+}
+
+.feature-div img {
+    margin: auto;
+    padding-bottom: 0.5rem;
+    width: 130px;
+    height: 100px;
+    opacity: 50%;
+}
+
+#attributes-section {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.attribute-box {
+    display: inline-table;
+    padding: 2rem 2rem 4rem 2rem;
+    margin: 3rem auto;
+    width: 250px;
+    height: 120px;
+    border: 5px solid #9AB593;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+}
+
+.attribute-box h3 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: #AACE9B;
+    text-transform: uppercase;
+}
+
+.attribute-box p {
+    font-size: 0.8rem;
+}
+
+.input-form {
+    height: 3rem;
+}
+
+#contact-opt {
+    display: flex;
+    align-items: flex-start;
+    line-height: 1.3rem;
+}
+
+#contact-opt input {
+    width: 4%;
+
+}
+
+#contact-opt label {
+    font-size: 0.9rem;
+}
+
+#btn-submit {
+    display: block;
+    margin: 1rem auto;
+    padding: 8px 15px;
+    border-style: none;
+    border: 1px solid #373867;
+    border-radius: 5px;
+    background-color: #AACE9B;
+    font-family: 'Roboto', 'sans-serif';
+    font-size: 1rem;
+    color: #373867;
+    cursor: pointer;
+}
+
+#btn-submit:hover {
+    background-color: #fff;
+}
+
+#our-history-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+#our-history-section h2 {
+    padding-top: 4rem;
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+.p-semibold {
+    padding: 2rem 0;
+    width: 90%;
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+.p-regular {
+    width: 85%;
+    padding-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+#items-section {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#items-section div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 30%;
+    margin: 4rem 0;
+}
+
+#items-section h3 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: #AACE9B;
+    text-transform: uppercase;
+    text-align: start;
+}
+
+#items-section li {
+    line-height: 20px;
+    list-style-type: disc;
+}
+
+#items-section a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #373867;
+}
+
+form {
+    margin: 0 auto;
+    width: 90%;
+}
+
+legend {
+    margin: 0 auto;
+    padding: 4rem 0 3rem 0;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+label {
+    display: block;
+    padding-bottom: 0.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+input {
+    margin-bottom: 2rem;
+}
+
+textarea {
+    height: 12rem;
+    resize: none;
+}
+
+input,
+textarea {
+    width: 98%;
+    padding: 1rem;
+    border-style: none;
+    border-radius: 15px;
+    background-color: rgba(55, 56, 103, 0.4);
+    box-sizing: border-box;
+}
+
+input:hover,
+textarea:hover {
+    outline: none;
+    border: solid 3px #AACE9B;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border: solid 3px #69A362;
+}

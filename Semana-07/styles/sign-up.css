@@ -1,0 +1,103 @@
+.container {
+    width: 50%;
+    min-width: 400px;
+    margin: 2rem auto;
+    padding: 2% 0 4% 0;
+    box-shadow: 0 5px 10px 1px rgba(0, 0, 0, 0.30);
+    text-align: center;
+}
+
+#signup-title {
+    margin-bottom: 4rem;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.inputs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.inputs input {
+    display: block;
+    width: 80%;
+    margin: 0.8rem auto;
+    padding: 0.5rem;
+    border-style: none;
+    border-bottom: solid 2px #373867;
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+
+.inputs input:hover, .inputs input:focus {
+    background-color: rgba(55, 56, 103,0.1);
+}
+
+#btn-create {
+    margin: 3rem auto;
+}
+
+.invalid-field {
+    justify-content: center;
+    width: 60%;
+    margin: 0 auto;
+    padding: 5px 0 1rem 0;
+    font-size: 13px;
+    color: red;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.inputs .valid {
+    border-bottom: solid 2px #69A362;
+}
+
+.inputs .invalid {
+    border-bottom: 2px solid red;
+}
+
+fieldset {
+    display: flex;
+    flex-direction: column;
+}
+
+fieldset p {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: rgba(60, 60, 60, 0.8);
+}
+
+input:focus {
+    outline-style: none;
+}
+
+fieldset a {
+    padding: 10% 25% 10% 0;
+    text-decoration: none;
+    text-align: end;
+    color: #373867;
+}
+
+button {
+    display: block;
+    width: 35%;
+    margin: 1rem auto;
+    padding: 8px 15px;
+    border-style: none;
+    border: 1px solid #373867;
+    background-color: #AACE9B;
+    font-size: 1rem;
+    color: #373867;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #fff;
+}
+
+footer {
+    position: sticky;
+    bottom: 0;
+}

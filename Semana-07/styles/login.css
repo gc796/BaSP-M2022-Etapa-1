@@ -1,0 +1,102 @@
+.container {
+    width: 40%;
+    min-width: 420px;
+    margin: 6% auto;
+    padding: 2% 0 6% 0;
+    box-shadow: 0 5px 10px 1px rgba(0, 0, 0, 0.30);
+    text-align: center;
+}
+
+#login-title {
+    margin-bottom: 4rem;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.invalid-field {
+    justify-content: center;
+    width: 35%;
+    margin: 0 auto;
+    padding: 0.2rem 0 1rem 0;
+    font-size: 14px;
+    color: red;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.label .valid {
+    border-bottom: solid 2px #69A362;
+}
+
+.label .invalid {
+    border-bottom: 2px solid red;
+}
+
+.label {
+    display: flex;
+    align-items: center;
+    width: 50%;
+    margin: 1rem auto;
+}
+
+.label input {
+    width: 80%;
+    padding-left: 1.5rem;
+    border-style: none;
+    font-size: 1rem;
+    line-height: 2rem;
+    border-bottom: 2px solid #373867;
+}
+
+.label input:hover, .label input:focus{
+    background-color: rgba(55, 56, 103, 0.1);
+}
+
+.label .icon {
+    position: absolute;
+}
+
+fieldset {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    padding-left: 25%;
+    text-align: start;
+}
+
+input:focus {
+    outline-style: none;
+}
+
+fieldset a {
+    margin: 10% 25% 10% 0;
+    text-decoration: none;
+    text-align: end;
+    color: #373867;
+}
+
+button {
+    display: block;
+    width: 35%;
+    margin: 1rem auto;
+    padding: 8px 15px;
+    border-style: none;
+    border: 1px solid #373867;
+    background-color: #AACE9B;
+    font-size: 1rem;
+    color: #373867;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #fff;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+}

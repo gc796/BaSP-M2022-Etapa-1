@@ -5,6 +5,7 @@ window.onload = function () {
     var btnSubmit = document.getElementById('btn-submit');
     var invalidEmail= document.querySelector('.invalid-email');
     var invalidPw = document.querySelector('.invalid-pw');
+    var urlLogin = 'https://basp-m2022-api-rest-server.herokuapp.com/login';
 
         function validateEmail() {
         if (testEmail.test(inputEmail.value)) {
@@ -25,7 +26,7 @@ window.onload = function () {
         var arrayPw = [];
         var cont1=0, cont2=0, cont3=0, contTotal=0, contPw=0;
 
-        if (inputPw.value.length > 8) {
+        if (inputPw.value.length >= 8) {
 
             for (let index = 0; index < inputPw.length; index++) {
                 arrayPw[index] = inputPw.substring(index, index + 1);
@@ -67,6 +68,35 @@ window.onload = function () {
     };
     };
 
+    function myRequest(urlLogin) {
+        fetch(urlLogin + '?email=' + inputEmail.value + '&password=' + inputPw.value)
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert(
+                    `
+                    ${data.msg}
+                    ---information---
+                    Email: ${inputEmail.value}
+                    Password: ${inputPw.value}
+                    `
+                    )
+
+                    inputEmail.classList.add('valid');
+                    inputPw.classList.add('valid');
+
+                } else {
+                    inputEmail.classList.add('invalid');
+                    inputPw.classList.add('invalid');
+                    throw alert(data.msg);
+                }
+            })
+            .catch(function (error) {
+                console.warn('error', error);
+                }
+            );
+    };
+
     btnSubmit.addEventListener('click', e => {
         e.preventDefault();
         validateEmail();
@@ -106,12 +136,9 @@ window.onload = function () {
             }
         });
 
-        alert(
-                `
-                ---information---
-                Email: ${inputEmail.value}
-                Password: ${inputPw.value}
-                `
-            );
+
+        if (validateEmail() && validatePw(inputPw)) {
+            myRequest(urlLogin);
+        }
     });
 };

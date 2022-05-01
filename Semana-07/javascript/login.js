@@ -7,7 +7,7 @@ window.onload = function () {
     var invalidPw = document.querySelector('.invalid-pw');
     var urlLogin = 'https://basp-m2022-api-rest-server.herokuapp.com/login';
 
-        function validateEmail() {
+    function validateEmail() {
         if (testEmail.test(inputEmail.value)) {
             inputEmail.classList.add('valid');
             return true;
@@ -16,7 +16,6 @@ window.onload = function () {
             inputEmail.classList.add('invalid');
             return false;
         }
-        
     };
 
     function validatePw(inputPw) {
@@ -24,39 +23,37 @@ window.onload = function () {
         var stringMayus = stringMin.toUpperCase();
         var num = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
         var arrayPw = [];
-        var cont1=0, cont2=0, cont3=0, contTotal=0, contPw=0;
+        var contMin=0, contMayus=0, contLetters=0, contNum=0, contTotal=0, contPw=0;
 
         if (inputPw.value.length >= 8) {
-
-            for (let index = 0; index < inputPw.length; index++) {
-                arrayPw[index] = inputPw.substring(index, index + 1);
+            for (var index = 0; index < inputPw.value.length; index++) {
+                arrayPw[index] = inputPw.value.substring(index, index + 1);
                 contPw++;
             }
-
             for (let index = 0; index < arrayPw.length; index++) {
                 for (let j = 0; j < stringMin.length; j++) {
                     if (arrayPw[index] == stringMin.substring(j, j + 1)) {
-                        cont1++;
+                        contMin++;
                     }
                     if (arrayPw[index] == stringMayus.substring(j, j + 1)) {
-                        cont2++;
+                        contMayus++;
                     }
                 };
                 for (let k = 0; k < num.length; k++) {
                     if (arrayPw[index] == num[k]) {
-                        cont3++;
+                        contNum++;
                     }
                 };
             };
-
-            contTotal = cont1 + cont2 + cont3;
-            if (contPw == contTotal) {
+            
+            contLetters = contMin + contMayus;
+            contTotal = contLetters + contNum;
+            if (contLetters >=1 && contNum >= 1 && contPw == contTotal) {
                 inputPw.classList.add('valid');
                 inputPw.classList.remove('invalid');
                 invalidPw.classList.add('hidden');
                 return true;
             } else {
-                console.log('Es falsoo')
                 inputPw.classList.add('invalid');
                 invalidPw.classList.remove('hidden');
                 return false;
@@ -70,31 +67,29 @@ window.onload = function () {
 
     function myRequest(urlLogin) {
         fetch(urlLogin + '?email=' + inputEmail.value + '&password=' + inputPw.value)
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    alert(
-                    `
-                    ${data.msg}
-                    ---information---
-                    Email: ${inputEmail.value}
-                    Password: ${inputPw.value}
-                    `
-                    )
-
-                    inputEmail.classList.add('valid');
-                    inputPw.classList.add('valid');
-
-                } else {
-                    inputEmail.classList.add('invalid');
-                    inputPw.classList.add('invalid');
-                    throw alert(data.msg);
-                }
-            })
-            .catch(function (error) {
-                console.warn('error', error);
-                }
-            );
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert(
+                `
+                ${data.msg}
+                ---information---
+                Email: ${inputEmail.value}
+                Password: ${inputPw.value}
+                `
+                )
+                inputEmail.classList.add('valid');
+                inputPw.classList.add('valid');
+            } else {
+                inputEmail.classList.add('invalid');
+                inputPw.classList.add('invalid');
+                throw alert(data.msg);
+            }
+        })
+        .catch(function (error) {
+            console.warn('error', error);
+            }
+        );
     };
 
     btnSubmit.addEventListener('click', e => {

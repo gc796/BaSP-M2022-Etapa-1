@@ -61,11 +61,11 @@
                                 <p class="invalid-field invalid-name hidden">*Invalid name</p>
                                 <input type="text" id="lastname" placeholder="Last Name">
                                 <p class="invalid-field invalid-lastname hidden">*Invalid last name</p>
-                                <input type="number" id="dni" placeholder="DNI">
-                                <p class="invalid-field invalid-dni hidden"></p>
-                                <input type="date" id="date">
-                                <p class="invalid-field invalid-date hidden"></p>
-                                <input type="number" id="phone-number" placeholder="Phone Number">
+                                <input type="text" id="dni" placeholder="DNI: XXXXXXX" onkeypress='validateNumers2(event)'>
+                                <p class="invalid-field invalid-dni hidden">*Invalid DNI</p>
+                                <input type="text" id="date" placeholder="Date: MM/DD/YYYY" onkeypress='validateNumers(event)' >
+                                <p class="invalid-field invalid-date hidden">*Invalid date or format</p>
+                                <input type="number" id="phone-number" placeholder="Phone: XXXXXXXXXX" onkeypress='validateNumers2(event)'>
                                 <p class="invalid-field invalid-phone hidden">*Invalid phone</p>
                                 <input type="text" id="home-address" placeholder="Home Address">
                                 <p class="invalid-field invalid-address hidden">*Invalid address</p>
@@ -73,9 +73,9 @@
                             <div>
                                 <input type="text" id="location" placeholder="Location">
                                 <p class="invalid-field invalid-location hidden">*Invalid location</p>
-                                <input type="number" id="postal-code" placeholder="Postal Code">
+                                <input type="text" id="postal-code" placeholder="Postal Code" onkeypress='validateNumers2(event)'>
                                 <p class="invalid-field invalid-postalcode hidden">*Invalid postal code</p>
-                                <input type="email" id="email" placeholder="Email">
+                                <input type="text" id="email" placeholder="Email">
                                 <p class="invalid-field invalid-email hidden">*Invalid email</p>
                                 <input type="password" id="password" placeholder="Password">
                                 <p class="invalid-field invalid-pw hidden">*Invalid password</p>

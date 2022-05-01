@@ -21,7 +21,7 @@ window.onload = function () {
     function validatePw(inputPw) {
         var stringMin = 'abcdefghijklmnopqrst';
         var stringMayus = stringMin.toUpperCase();
-        var num = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+        var num = ['0', 1, 2, 3, 4, 5, 6, 7, 8, 9];
         var arrayPw = [];
         var contMin=0, contMayus=0, contLetters=0, contNum=0, contTotal=0, contPw=0;
 

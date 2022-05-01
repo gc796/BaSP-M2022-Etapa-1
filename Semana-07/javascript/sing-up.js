@@ -32,7 +32,7 @@ window.onload = function () {
             if (isNaN(name.value.substring(index, index + 1))) {
                 cont++;
             }
-        }
+        };
         if (cont == name.value.length && name.value.length > 3) {
             name.classList.add('valid');
             return true;
@@ -40,10 +40,29 @@ window.onload = function () {
             invalidField.classList.remove('hidden');
             name.classList.add('invalid');
             return false;
-        }
+        };
     };
 
-    inputDate.setAttribute("onkeypress", "return validateNumers(event)");
+    function validateDNI() {
+        var dni = inputDNI.value;
+        var contNum=0;
+
+        for (let index = 0; index < dni.length; index++) {
+            if (!isNaN(dni.substring(index,index+1))) {
+                contNum++;
+            }  
+        };
+
+        if (dni.length >= 7 && dni.length <= 8 && contNum == dni.length) {
+            inputDNI.classList.add('valid');
+            return true;
+        } else {
+            invalidDNI.classList.remove('hidden');
+            inputDNI.classList.add('invalid');
+            return false;
+        };
+    };
+
     function validateDate() {
         var stringDate = inputDate.value;
         var month = stringDate.substring(0,2);
@@ -64,65 +83,55 @@ window.onload = function () {
             inputDate.classList.add('invalid');
             invalidDate.classList.remove('hidden');
             return false;
-        }
-    }
-
-    inputDNI.setAttribute("onkeypress", "return validateNumers2(event)");
-    function validateDNI() {
-        if (inputDNI.value.length >= 7 && inputDNI.value.length <= 8) {
-            inputDNI.classList.add('valid');
-            return true;
-        } else {
-            invalidDNI.classList.remove('hidden');
-            inputDNI.classList.add('invalid');
-            return false;
-        }
+        };
     };
 
-    inputPhone.setAttribute("onkeypress", "return validateNumers2(event)");
     function validatePhone() {
-        if (inputPhone.value.length == 10) {
+        var contNum=0;
+        var phone = inputPhone.value;
+
+        for (let index = 0; index < phone.length; index++) {
+            if (!isNaN(phone.substring(index, index + 1)) && phone.substring(index, index + 1) != ' ') {
+                contNum++;
+            }
+        };
+        if (phone.length == 10 && contNum == 10) {
             inputPhone.classList.add('valid');
             return true;
         } else {
             invalidPhone.classList.remove('hidden');
             inputPhone.classList.add('invalid');
             return false;
-        }
+        };
     };
 
     function validateAddress() {
-        var arrayAddress = [];
-        var num = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-        var contSum = 0;
         var flag;
+        var adress = inputAddress.value;
+        var contNum=0;
 
-        for (let index = 0; index < inputAddress.value.length; index++) {
-            arrayAddress[index] = inputAddress.value[index];
-        }
+        for (let index = 0; index < adress.length; index++) {
+            if (!isNaN(adress.substring(index, index + 1))) {
+                contNum++;
+            };
+        };
 
-        for (let index = 0; index < inputAddress.value.length; index++) {
-            for (let j = 0; j < num.length; j++) {
-                if (arrayAddress[index] == num[j]) {
-                    contSum++;
-                }
-            }
-        }
-        if (inputAddress.value.indexOf(" ") == -1) {
+        if (adress.indexOf(" ") == -1 || 
+            adress.indexOf(" ") == 0 || 
+            adress.substring(adress.length - 1) == ' ') {
             flag = false;
         } else {
             flag = true;
-        }
+        };
 
-        if (inputAddress.value.length > 5 && contSum > 0 && flag) {
+        if (adress.length > 5 && contNum > 0 && flag) {
             inputAddress.classList.add('valid');
             return true;
         } else {
             invalidAddress.classList.remove('hidden');
             inputAddress.classList.add('invalid');
             return false;
-        }
-
+        };
     };
 
     function validateLocation() {
@@ -133,19 +142,26 @@ window.onload = function () {
             invalidLocation.classList.remove('hidden');
             inputLocation.classList.add('invalid');
             return false;
-        }
+        };
     };
 
-    inputPostalCode.setAttribute("onkeypress", "return validateNumers2(event)");
     function validatePostalCode() {
-        if (inputPostalCode.value.length >= 4 && inputPostalCode.value.length <= 5) {
+        var contNum=0;
+        var postalCode = inputPostalCode.value;
+
+        for (let index = 0; index < postalCode.length; index++) {
+            if (!isNaN(postalCode.substring(index, index + 1)) && postalCode.substring(index, index + 1) != ' ') {
+                contNum++;
+            }
+        };
+        if (postalCode.length >= 4 && postalCode.length <= 5 && contNum == postalCode.length) {
             inputPostalCode.classList.add('valid');
             return true;
         } else {
             invalidPostaCode.classList.remove('hidden');
             inputPostalCode.classList.add('invalid');
             return false;
-        }
+        };
     };
 
     function validateEmail() {
@@ -156,14 +172,13 @@ window.onload = function () {
             invalidEmail.classList.remove('hidden');
             inputEmail.classList.add('invalid');
             return false;
-        }
-
+        };
     };
 
     function validatePw(inputPw) {
         var stringMin = 'abcdefghijklmnopqrst';
         var stringMayus = stringMin.toUpperCase();
-        var num = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+        var num = ['0', 1, 2, 3, 4, 5, 6, 7, 8, 9];
         var arrayPw = [];
         var contMin = 0, contMayus = 0, contLetters = 0, contNum = 0, contTotal = 0, contPw = 0;
 
@@ -179,12 +194,12 @@ window.onload = function () {
                     }
                     if (arrayPw[index] == stringMayus.substring(j, j + 1)) {
                         contMayus++;
-                    }
+                    };
                 };
                 for (let k = 0; k < num.length; k++) {
                     if (arrayPw[index] == num[k]) {
                         contNum++;
-                    }
+                    };
                 };
             };
 
@@ -199,7 +214,7 @@ window.onload = function () {
                 inputPw.classList.add('invalid');
                 invalidPw.classList.remove('hidden');
                 return false;
-            }
+            };
         } else {
             invalidPw.classList.remove('hidden');
             inputPw.classList.add('invalid');
@@ -215,39 +230,38 @@ window.onload = function () {
             invalidPw2.classList.remove('hidden');
             inputPw2.classList.add('invalid');
             return false;
-        }
+        };
     };
 
     function signupRequest(urlSignUp) {
-        fetch(urlSignUp + '?name=' + inputName.value + '&lastName=' + inputLastName.value + '&dni=' + inputDNI.value + '&dob=' + inputDate.value + '&phone=' + inputPhone.value + '&addres=' + inputAddress.value + '&city=' + inputLocation.value + '&zip=' + inputPostalCode.value + '&email=' + inputEmail.value + '&password=' + inputPw.value
-        )
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    alert(
-                        `
-                Congratulations, your registration was successful!
-                ---information---
-                Name: ${inputName.value}
-                Last Name: ${inputLastName.value}
-                DNI: ${inputDNI.value}
-                Phone: ${inputPhone.value}
-                Home Addres: ${inputAddress.value}
-                Location: ${inputLocation.value}
-                Postal Code: ${inputPostalCode.value}
-                Email: ${inputEmail.value}
-                Password: ${inputPw.value}
-                `
-                    );
-                } else {
-                    throw alert(data.msg);
-                }
-            })
-            .catch(function (error) {
-                console.warn('error', error);
-            }
-            );;
-    }
+        fetch(urlSignUp + '?name=' + inputName.value + '&lastName=' + inputLastName.value + '&dni=' + inputDNI.value + '&dob=' + inputDate.value + '&phone=' + inputPhone.value + '&address=' + inputAddress.value + '&city=' + inputLocation.value + '&zip=' + inputPostalCode.value + '&email=' + inputEmail.value + '&password=' + inputPw.value)
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert(
+                    `
+                    Congratulations, your registration was successful!
+                    ---information---
+                    Name: ${inputName.value}
+                    Last Name: ${inputLastName.value}
+                    DNI: ${inputDNI.value}
+                    Phone: ${inputPhone.value}
+                    Home Addres: ${inputAddress.value}
+                    Location: ${inputLocation.value}
+                    Postal Code: ${inputPostalCode.value}
+                    Email: ${inputEmail.value}
+                    Password: ${inputPw.value}
+                    `
+                );
+            } else {
+                throw alert(data.msg);
+            };
+        })
+        .catch(function (error) {
+            console.warn('error', error);
+        }
+        );;
+    };
 
     btnCreate.addEventListener('click', e => {
         e.preventDefault();
@@ -447,19 +461,6 @@ window.onload = function () {
         });
 
         signupRequest(urlSignUp);
+
     });
 };
-
-function validateNumers(event) {
-    if (event.charCode >= 47 && event.charCode <= 57) {
-        return true;
-    }
-    return false;
-}
-
-function validateNumers2(event) {
-    if (event.charCode >= 48 && event.charCode <= 57) {
-        return true;
-    }
-    return false;
-}

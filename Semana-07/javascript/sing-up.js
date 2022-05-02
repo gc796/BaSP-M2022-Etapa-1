@@ -24,6 +24,7 @@ window.onload = function () {
     var invalidPw = document.querySelector('.invalid-pw');
     var invalidPw2 = document.querySelector('.invalid-pw2');
     var urlSignUp = 'https://basp-m2022-api-rest-server.herokuapp.com/signup';
+    var ls = localStorage;
 
     function validateFullName(name, invalidField) {
         var cont = 0;
@@ -253,8 +254,14 @@ window.onload = function () {
                     Password: ${inputPw.value}
                     `
                 );
+
             } else {
-                throw alert(data.msg);
+                var alertErrors='';
+                for (let index = 0; index < data.errors.length; index++) {
+                    alertErrors = `${alertErrors} 
+                                -${data.errors[index].msg}`;
+                }
+                throw alert(alertErrors);
             };
         })
         .catch(function (error) {

@@ -29,7 +29,7 @@ window.onload = function () {
     function validateFullName(name, invalidField) {
         var cont = 0;
 
-        for (let index = 0; index < name.value.length; index++) {
+        for (var index = 0; index < name.value.length; index++) {
             if (isNaN(name.value.substring(index, index + 1))) {
                 cont++;
             }
@@ -48,7 +48,7 @@ window.onload = function () {
         var dni = inputDNI.value;
         var contNum=0;
 
-        for (let index = 0; index < dni.length; index++) {
+        for (var index = 0; index < dni.length; index++) {
             if (!isNaN(dni.substring(index,index+1))) {
                 contNum++;
             }  
@@ -91,7 +91,7 @@ window.onload = function () {
         var contNum=0;
         var phone = inputPhone.value;
 
-        for (let index = 0; index < phone.length; index++) {
+        for (var index = 0; index < phone.length; index++) {
             if (!isNaN(phone.substring(index, index + 1)) && phone.substring(index, index + 1) != ' ') {
                 contNum++;
             }
@@ -111,7 +111,7 @@ window.onload = function () {
         var adress = inputAddress.value;
         var contNum=0;
 
-        for (let index = 0; index < adress.length; index++) {
+        for (var index = 0; index < adress.length; index++) {
             if (!isNaN(adress.substring(index, index + 1))) {
                 contNum++;
             };
@@ -150,7 +150,7 @@ window.onload = function () {
         var contNum=0;
         var postalCode = inputPostalCode.value;
 
-        for (let index = 0; index < postalCode.length; index++) {
+        for (var index = 0; index < postalCode.length; index++) {
             if (!isNaN(postalCode.substring(index, index + 1)) && postalCode.substring(index, index + 1) != ' ') {
                 contNum++;
             }
@@ -181,15 +181,15 @@ window.onload = function () {
         var stringMayus = stringMin.toUpperCase();
         var num = ['0', 1, 2, 3, 4, 5, 6, 7, 8, 9];
         var arrayPw = [];
-        var contMin = 0, contMayus = 0, contLetters = 0, contNum = 0, contTotal = 0, contPw = 0;
+        var contMin = 0, contMayus = 0, contvarters = 0, contNum = 0, contTotal = 0, contPw = 0;
 
         if (inputPw.value.length >= 8) {
             for (var index = 0; index < inputPw.value.length; index++) {
                 arrayPw[index] = inputPw.value.substring(index, index + 1);
                 contPw++;
             }
-            for (let index = 0; index < arrayPw.length; index++) {
-                for (let j = 0; j < stringMin.length; j++) {
+            for (var index = 0; index < arrayPw.length; index++) {
+                for (var j = 0; j < stringMin.length; j++) {
                     if (arrayPw[index] == stringMin.substring(j, j + 1)) {
                         contMin++;
                     }
@@ -197,16 +197,16 @@ window.onload = function () {
                         contMayus++;
                     };
                 };
-                for (let k = 0; k < num.length; k++) {
+                for (var k = 0; k < num.length; k++) {
                     if (arrayPw[index] == num[k]) {
                         contNum++;
                     };
                 };
             };
 
-            contLetters = contMin + contMayus;
-            contTotal = contLetters + contNum;
-            if (contLetters >= 1 && contNum >= 1 && contPw == contTotal) {
+            contvarters = contMin + contMayus;
+            contTotal = contvarters + contNum;
+            if (contvarters >= 1 && contNum >= 1 && contPw == contTotal) {
                 inputPw.classList.add('valid');
                 inputPw.classList.remove('invalid');
                 invalidPw.classList.add('hidden');
@@ -226,6 +226,7 @@ window.onload = function () {
     function validatePw2(inputPw, inputPw2) {
         if (inputPw.value == inputPw2.value && inputPw2.value.length > 0) {
             inputPw2.classList.add('valid');
+            invalidPw2.classList.add('hidden');
             return true;
         } else {
             invalidPw2.classList.remove('hidden');
@@ -234,11 +235,37 @@ window.onload = function () {
         };
     };
 
+    function saveLS() {
+        if (ls.getItem('name') == null &&
+            ls.getItem('last name') == null &&
+            ls.getItem('date') == null &&
+            ls.getItem('dni') == null &&
+            ls.getItem('phone') == null &&
+            ls.getItem('address') == null &&
+            ls.getItem('location') == null &&
+            ls.getItem('postal code') == null &&
+            ls.getItem('email') == null &&
+            ls.getItem('password') == null) {
+                ls.setItem('name', inputName.value);
+                ls.setItem('last name', inputLastName.value);
+                ls.setItem('date', inputDate.value);
+                ls.setItem('dni', inputDNI.value);
+                ls.setItem('phone', inputPhone.value);
+                ls.setItem('address', inputAddress.value);
+                ls.setItem('location', inputLocation.value);
+                ls.setItem('postal code', inputPostalCode.value);
+                ls.setItem('email', inputEmail.value);
+                ls.setItem('password', inputPw.value);
+        } else {
+            alert('There is already a user saved in local storage')
+        }
+    }
+
     function signupRequest(urlSignUp) {
         fetch(urlSignUp + '?name=' + inputName.value + '&lastName=' + inputLastName.value + '&dni=' + inputDNI.value + '&dob=' + inputDate.value + '&phone=' + inputPhone.value + '&address=' + inputAddress.value + '&city=' + inputLocation.value + '&zip=' + inputPostalCode.value + '&email=' + inputEmail.value + '&password=' + inputPw.value)
         .then(response => response.json())
         .then(data => {
-            if (data.success) {
+            if (data.success && validatePw2(inputPw, inputPw2)) {
                 alert(
                     `
                     Congratulations, your registration was successful!
@@ -254,21 +281,36 @@ window.onload = function () {
                     Password: ${inputPw.value}
                     `
                 );
-
+                saveLS();
             } else {
                 var alertErrors='';
-                for (let index = 0; index < data.errors.length; index++) {
+                for (var index = 0; index < data.errors.length; index++) {
                     alertErrors = `${alertErrors} 
                                 -${data.errors[index].msg}`;
                 }
-                throw alert(alertErrors);
+                throw alert('Error:'+ alertErrors);
             };
         })
         .catch(function (error) {
             console.warn('error', error);
         }
-        );;
+        );
     };
+
+    function setInputsLS() {
+        inputName.value = ls.getItem('name');
+        inputLastName.value = ls.getItem('last name');
+        inputDate.value = ls.getItem('date');
+        inputDNI.value = ls.getItem('dni');
+        inputPhone.value = ls.getItem('phone');
+        inputAddress.value = ls.getItem('address');
+        inputLocation.value = ls.getItem('location');
+        inputPostalCode.value = ls.getItem('postal code');
+        inputEmail.value = ls.getItem('email');
+        inputPw.value = ls.getItem('password');
+    }
+
+    setInputsLS()
 
     btnCreate.addEventListener('click', e => {
         e.preventDefault();
@@ -434,34 +476,45 @@ window.onload = function () {
         });
 
         inputPw.addEventListener('blur', () => {
-            if (validatePw(inputPw)) {
+            if (validatePw(inputPw) && validatePw2(inputPw, inputPw2)) {
                 inputPw.classList.add('valid');
                 inputPw.classList.remove('invalid');
+                inputPw2.classList.add('valid');
+                inputPw2.classList.remove('invalid');
             } else {
                 inputPw.classList.add('invalid');
                 inputPw.classList.remove('valid');
+                inputPw2.classList.add('invalid');
+                inputPw2.classList.remove('valid');
             }
         });
 
         inputPw.addEventListener('focus', () => {
-            if (!validatePw(inputPw)) {
+            if (!validatePw(inputPw) && !validatePw2(inputPw, inputPw2)) {
                 invalidPw.classList.toggle('hidden');
                 inputPw.classList.remove('invalid');
+                invalidPw2.classList.toggle('hidden');
+                inputPw2.classList.remove('invalid');
             }
         });
-
         inputPw2.addEventListener('blur', () => {
-            if (validatePw2(inputPw, inputPw2)) {
+            if (validatePw(inputPw) && validatePw2(inputPw, inputPw2)) {
+                inputPw.classList.add('valid');
+                inputPw.classList.remove('invalid');
                 inputPw2.classList.add('valid');
                 inputPw2.classList.remove('invalid');
             } else {
+                inputPw.classList.add('invalid');
+                inputPw.classList.remove('valid');
                 inputPw2.classList.add('invalid');
                 inputPw2.classList.remove('valid');
             }
         });
 
         inputPw2.addEventListener('focus', () => {
-            if (!validatePw2(inputPw, inputPw2)) {
+            if (!validatePw(inputPw) && !validatePw2(inputPw, inputPw2)) {
+                invalidPw.classList.toggle('hidden');
+                inputPw.classList.remove('invalid');
                 invalidPw2.classList.toggle('hidden');
                 inputPw2.classList.remove('invalid');
             }

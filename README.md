@@ -75,3 +75,17 @@ This week we created a login page and a signup page with your validations.
 **Link github pages:** https://gc796.github.io/BaSP-M2022-Etapa-1/Semana-06/views/index.html
 
 **All the files are inside of "Semana-06" folder.**
+
+### 7th week
+
+This week's goals were:
+
+- Understand the details of Client-Server architectures.
+- Understand the differences between Static Servers and Dynamic Servers.
+- Implement HTTP requests to external services to get data asynchronously.
+- Understand the concept of asynchronous functions and the difference between - Callbacks and Promises.
+- Adopt tools for data persistence in the browser.
+
+**Link github pages:** https://gc796.github.io/BaSP-M2022-Etapa-1/Semana-07/views/index.html
+
+All the files are inside of "Semana-07" folder.
